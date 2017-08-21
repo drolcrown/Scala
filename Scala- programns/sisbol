@@ -1,0 +1,140 @@
+
+#Atualizar Tempo de Servico: Falha Militar Vazio
+  Cenario: Atualizar Tempo de Servico Falha Militar vazio
+    Dado que eu possua um Tempo de Servico com os campos
+      """
+        {
+          "assinante" : "Militar",
+          "dataInicio" : "2016-12-10T00:00:00.000-0200",
+          "dataTermino" : "2016-12-20T00:00:00.000-0200",
+          "comportamento": "Bom",
+        }
+      """
+    E que eu precise atualizar com os campos
+       """
+        {
+          "assinante" : "",
+          "dataInicio" : "2016-12-10T00:00:00.000-0200",
+          "dataTermino" : "2016-12-20T00:00:00.000-0200",
+          "comportamento": "Mau",
+        }
+      """
+    Quando eu requisitar que este Tempo de Servico seja atualizado
+    Entao devo receber uma confirmacao de erro na atualizacao
+
+
+#Atualizar Tempo de Servico: Falha Comportamento vazio
+  Cenario: Atualizar Tempo de Servico Falha Comportamento vazio
+    Dado que eu possua um Tempo de Servico com os campos
+      """
+        {
+          "assinante" : "Militar",
+          "dataInicio" : "2016-12-10T00:00:00.000-0200",
+          "dataTermino" : "2016-12-20T00:00:00.000-0200",
+          "comportamento": "Bom",
+        }
+      """
+    E que eu precise atualizar com os campos
+       """
+        {
+          "assinante" : "Militar",
+          "dataInicio" : "2016-12-10T00:00:00.000-0200",
+          "dataTermino" : "2016-12-20T00:00:00.000-0200",
+          "comportamento": "",
+        }
+      """
+    Quando eu requisitar que este Tempo de Servico seja atualizado
+    Entao devo receber uma confirmacao de erro na atualizacao
+
+#Atualizar Tempo de Servico: Falha Data de Inicio vazia
+  Cenario: Atualizar Tempo de Servico Falha Data de Inicio vazia
+    Dado que eu possua um Tempo de Servico com os campos
+      """
+        {
+          "assinante" : "Militar",
+          "dataInicio" : "2016-12-10T00:00:00.000-0200",
+          "dataTermino" : "2016-12-20T00:00:00.000-0200",
+          "comportamento": "Bom",
+        }
+      """
+    E que eu precise atualizar com os campos
+       """
+        {
+          "assinante" : "Militar",
+          "dataInicio" : "",
+          "dataTermino" : "2016-12-20T00:00:00.000-0200",
+          "comportamento": "Bom",
+        }
+      """
+    Quando eu requisitar que este Tempo de Servico seja atualizado
+    Entao devo receber uma confirmacao de erro na atualizacao
+
+#Atualizar Tempo de Servico: Falha Data de Termino vazia
+  Cenario: Atualizar Tempo de Servico Falha Data de Termino vazia
+    Dado que eu possua um Tempo de Servico com os campos
+      """
+        {
+          "assinante" : "Militar",
+          "dataInicio" : "2016-12-10T00:00:00.000-0200",
+          "dataTermino" : "2016-12-20T00:00:00.000-0200",
+          "comportamento": "Bom",
+        }
+      """
+    E que eu precise atualizar com os campos
+       """
+        {
+          "assinante" : "Militar",
+          "dataInicio" : "2016-12-20T00:00:00.000-0200",
+          "dataTermino" : "",
+          "comportamento": "Bom",
+        }
+      """
+    Quando eu requisitar que este Tempo de Servico seja atualizado
+    Entao devo receber uma confirmacao de erro na atualizacao
+
+
+#Atualizar Tempo de Servico: Falha Todos Campos vazios
+  Cenario: Atualizar Tempo de Servico Falha Todos Campos Vazios
+    Dado que eu possua um Tempo de Servico com os campos
+      """
+        {
+          "assinante" : "Militar",
+          "dataInicio" : "2016-12-10T00:00:00.000-0200",
+          "dataTermino" : "2016-12-20T00:00:00.000-0200",
+          "comportamento": "Bom",
+        }
+      """
+    E que eu precise atualizar com os campos
+       """
+        {
+          "assinante" : "",
+          "dataInicio" : "",
+          "dataTermino" : "",
+          "comportamento": "",
+        }
+      """
+    Quando eu requisitar que este Tempo de Servico seja atualizado
+    Entao devo receber uma confirmacao de erro na atualizacao
+
+#Atualizar Tempo de Servico: Falha Data de Inicio maior que Data de Termino
+  Cenario: Atualizar Tempo de Servico Falha Data de Inicio maior que Data de Termino
+    Dado que eu possua um Tempo de Servico com os campos
+      """
+        {
+          "assinante" : "Militar",
+          "dataInicio" : "2016-12-10T00:00:00.000-0200",
+          "dataTermino" : "2016-12-20T00:00:00.000-0200",
+          "comportamento": "Bom",
+        }
+      """
+    E que eu precise atualizar com os campos
+       """
+        {
+          "assinante" : "Militar",
+          "dataInicio" : "2016-12-20T00:00:00.000-0200",
+          "dataTermino" : "2015-12-20T00:00:00.000-0200",
+          "comportamento": "Mal",
+        }
+      """
+    Quando eu requisitar que este Tempo de Servico seja atualizado
+    Entao devo receber uma confirmacao de erro na atualizacao
